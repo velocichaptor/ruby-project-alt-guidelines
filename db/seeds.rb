@@ -2,21 +2,19 @@
     Player.create ({
         name: Faker::Name.name, 
         age: Faker::Number.between(from: 6, to: 66),
-        campaign_id: Campaign.all.sample.id
     })
 end
 
 10.times do
-    DungeonMasters.create ({
+    DungeonMaster.create ({
         name: Faker::Name.name,
         style: Faker::Music.genre,
         age: Faker::Number.between(from: 6, to: 66),
-        campaign_id: Campaign.all.sample.id
     })
 end
 
 25.times do
-    Campaigns.create ({
+    Campaign.create ({
         name: Faker::Games::WarhammerFantasy.faction,
         setting: Faker::Games::WarhammerFantasy.location,
         tone: Faker::Book.genre, 

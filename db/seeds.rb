@@ -7,7 +7,7 @@
 end
 
 10.times do
-    DungeonMaster.create ({
+    DungeonMasters.create ({
         name: Faker::Name.name,
         style: Faker::Music.genre,
         age: Faker::Number.between(from: 6, to: 66),
@@ -16,7 +16,7 @@ end
 end
 
 25.times do
-    Campaign.create ({
+    Campaigns.create ({
         name: Faker::Games::WarhammerFantasy.faction,
         setting: Faker::Games::WarhammerFantasy.location,
         tone: Faker::Book.genre, 

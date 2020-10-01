@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_30_192607) do
+ActiveRecord::Schema.define(version: 2020_09_30_222157) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
@@ -18,20 +18,34 @@ ActiveRecord::Schema.define(version: 2020_09_30_192607) do
     t.string "tone"
     t.integer "session"
     t.integer "dungeon_master_id"
+    t.integer "character_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.string "name"
+    t.string "race"
+    t.integer "level"
     t.integer "player_id"
+    t.integer "campaign_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "dungeon_masters", force: :cascade do |t|
     t.string "name"
     t.string "style"
     t.integer "age"
-    t.integer "campaign_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.integer "campaign_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

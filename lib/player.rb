@@ -1,3 +1,4 @@
 class Player < ActiveRecord::Base
-    belongs_to :campaigns
+    has_many :characters
+    has_many :campaigns, through: :characters
 end

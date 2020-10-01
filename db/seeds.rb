@@ -1,11 +1,11 @@
-100.times do
+25.times do
     Player.create ({
         name: Faker::Name.name, 
         age: Faker::Number.between(from: 6, to: 66),
     })
 end
 
-10.times do
+5.times do
     DungeonMaster.create ({
         name: Faker::Name.name,
         style: Faker::Music.genre,
@@ -13,14 +13,23 @@ end
     })
 end
 
-25.times do
+10.times do
     Campaign.create ({
-        name: Faker::Games::WarhammerFantasy.faction,
-        setting: Faker::Games::WarhammerFantasy.location,
+        name: Faker::Games::HeroesOfTheStorm.battleground,
+        setting: Faker::Games::Witcher.location,
         tone: Faker::Book.genre, 
         session: Faker::Number.between(from: 1, to: 10),
         dungeon_master_id: DungeonMaster.all.sample.id,
-        player_id: Player.all.sample.id
+    })
+end
+
+25.times do
+    Character.create ({
+        name: Faker::Games::HeroesOfTheStorm.hero,
+        race: Faker::Games::ElderScrolls.race, 
+        level: Faker::Number.between(from: 1, to: 20),
+        player_id: Player.all.sample.id,
+        campaign_id: Campaign.all.sample.id
     })
 end
 
